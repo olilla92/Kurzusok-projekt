@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kurzusok és Diákok kezelése</title>
+  <link rel="stylesheet" href="kurzusok_style.css">
+  <script src="kurzusok_script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Kurzusok és Diákok kezelése</h1>
+  </header>
+
+  <main>
+    <div>
+      <button onclick="showCourses()">Kurzusok</button>
+      <button onclick="showStudents()">Diákok</button>
+    </div>
+
+    <section id="coursesSection" style="display:none;">
+      <h2>Kurzusok</h2>
+      <button onclick="createCourse()">Új kurzus hozzáadása</button>
+      <div id="courseList"></div>
+    </section>
+
+    <section id="studentsSection" style="display:none;">
+      <h2>Diákok</h2>
+      <button onclick="createStudent()">Új diák hozzáadása</button>
+      <div id="studentList"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
