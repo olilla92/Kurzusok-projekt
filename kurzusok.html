@@ -3,34 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kurzusok és Diákok kezelése</title>
+  <title>Kurzusok és Diákok</title>
   <link rel="stylesheet" href="kurzusok_style.css">
-  <script src="kurzusok_script.js"></script>
 </head>
 <body>
   <header>
     <h1>Kurzusok és Diákok kezelése</h1>
+    <nav>
+      <button id="coursesBtn">Kurzusok</button>
+      <button id="studentsBtn">Diákok</button>
+    </nav>
   </header>
 
-  <main>
-    <div>
-      <button onclick="showCourses()">Kurzusok</button>
-      <button onclick="showStudents()">Diákok</button>
-    </div>
-
-    <section id="coursesSection" style="display:none;">
-      <h2>Kurzusok</h2>
-      <button onclick="createCourse()">Új kurzus hozzáadása</button>
-      <div id="courseList"></div>
+  <main id="content">
+    <section id="coursesSection">
+      <h2>Kurzusok listája:</h2>
+      <button onclick="showForm('course')">Új kurzus létrehozása:</button>
+      <div id="coursesList"></div>
     </section>
 
-    <section id="studentsSection" style="display:none;">
-      <h2>Diákok</h2>
-      <button onclick="createStudent()">Új diák hozzáadása</button>
-      <div id="studentList"></div>
+    <section id="studentsSection" style="display: none;">
+      <h2>Diákok listája:</h2>
+      <button onclick="showForm('student')">Új diák létrehozása:</button>
+      <div id="studentsList"></div>
+    </section>
+
+    <section id="formSection" style="display: none;">
+      <h2 id="formTitle"></h2>
+      <form id="dataForm">  <!--adatbekérő form-->
+        <label for="name">Név:</label>
+        <input type="text" id="name" required><br><br> <!--név bekérésének szövegdoboza-->
+        <label for="details">Részletek:</label>
+        <input type="text" id="details"><br><br> <!--részletek bekérésének szövegdoboza-->
+        <button type="submit">Mentés</button> <!--mentés gombja-->
+      </form>
+      <button onclick="cancelForm()">Mégse</button> <!--a form bezárásához gomb-->
     </section>
   </main>
 
-  <script src="script.js"></script>
+  <script src="kurzusok_script.js"></script>
 </body>
 </html>
